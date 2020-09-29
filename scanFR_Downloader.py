@@ -49,8 +49,6 @@ def main():
         if appendix != None :
             full_url = base_url + "/" + appendix + "-" + detrompino + str(counter) + extension
         
-        print(full_url)
-        sys.exit()
         r = requests.get(full_url, stream=True)
 
         if r.status_code == 200 :
