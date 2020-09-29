@@ -53,7 +53,7 @@ def main():
 
         if r.status_code == 200 :
 
-            if counter == 1 : 
+            if counter == 0 : 
                 dir_name = Path("{}/Mangas/{}/{}".format(path, manga, chapter))
             if os.name == 'nt':
                 dir_name = PureWindowsPath(dir_name)
