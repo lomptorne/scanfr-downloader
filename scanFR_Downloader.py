@@ -33,28 +33,24 @@ def main():
     if "00" in str(numberino) : 
         detrompino = "00"
     if detrompino != 0 : 
-        full_url = base_url + "/" + detrompino + str(counter) + extension
         checker = True
     else :
         detrompino = "0"
-        full_url = base_url + "/" + detrompino + str(counter) + extension
 
     while(True): 
 
-        full_url = base_url + "/" + detrompino + str(counter) + extension
-        
-        if appendix != None :
-            full_url = base_url + "/" + appendix + "-" + detrompino + str(counter) + extension
         if counter >= 10 and checker == True :
             detrompino = "0"
-            full_url = base_url + "/" + detrompino + str(counter) + extension
         if counter >= 10 and checker == False :
             detrompino = ""
-            full_url = base_url + "/" + detrompino + str(counter) + extension
         if counter >= 100 and checker == True :
             detrompino = ""
-            full_url = base_url + "/" + detrompino + str(counter) + extension
-
+        full_url = base_url + "/" + detrompino + str(counter) + extension
+        if appendix != None :
+            full_url = base_url + "/" + appendix + "-" + detrompino + str(counter) + extension
+        
+        print(full_url)
+        sys.exit()
         r = requests.get(full_url, stream=True)
 
         if r.status_code == 200 :
