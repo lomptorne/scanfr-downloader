@@ -52,8 +52,8 @@ def main():
         r = requests.get(full_url, stream=True)
 
         if r.status_code == 200 :
-
-            if counter == 0 : 
+            
+            if counter == 0 or counter == 1 : 
                 dir_name = Path("{}/Mangas/{}/{}".format(path, manga, chapter))
             if os.name == 'nt':
                 dir_name = PureWindowsPath(dir_name)
